@@ -1,13 +1,9 @@
 const express = require('express');
+const AuthController = require('./controllers/AuthController');
 
 const app = express();
 
-app.get('/',(req, res) => {
-    return res.json({
-        error:false,
-        message: 'Acesso permitido! '
-    });
-} );
+app.use('/auth', AuthController)
 
 app.listen(3001, () =>{
     console.log('O servidor está rodando.');
